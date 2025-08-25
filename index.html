@@ -5,6 +5,8 @@
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mobile optimization -->
+
     <style>
       body {
         font-family: 'Poppins', Arial, sans-serif; /* Use Google Font */
@@ -46,6 +48,33 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 400px; /* Limit width on larger screens */
+      }
+
+      /* Responsive Design for Mobile */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem; /* Smaller heading size */
+        }
+        p {
+          font-size: 1rem; /* Smaller paragraph size */
+        }
+        div {
+          padding: 15px; /* Adjust padding for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem; /* Even smaller heading size for very small screens */
+        }
+        p {
+          font-size: 0.9rem; /* Adjust paragraph size */
+        }
+        div {
+          padding: 10px; /* Further reduce padding */
+        }
       }
     </style>
   </head>
