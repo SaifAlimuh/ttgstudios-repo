@@ -9,9 +9,12 @@
       body {
         font-family: 'Poppins', Arial, sans-serif; /* Use Google Font */
         text-align: center;
-        margin-top: 20%;
-        background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1e3c72, #2a5298); /* Default gradient background */
         color: #fff; /* Default text color */
+        transition: background 0.1s ease; /* Smooth transition for gradient */
       }
       h1 {
         font-size: 2.5rem;
@@ -39,6 +42,10 @@
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         display: inline-block;
         text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
@@ -49,5 +56,20 @@
        <p>Checkout our socials:</p>
        <a href="https://www.instagram.com/ttgstudios.ca">Instagram</a>
     </div>
+
+    <script>
+      // JavaScript to make the background reactive to the cursor
+      document.addEventListener('mousemove', (event) => {
+        const x = event.clientX / window.innerWidth;
+        const y = event.clientY / window.innerHeight;
+
+        // Calculate gradient colors based on cursor position
+        const color1 = `rgb(${Math.floor(255 * x)}, ${Math.floor(255 * y)}, 200)`;
+        const color2 = `rgb(${Math.floor(255 * (1 - x))}, ${Math.floor(255 * (1 - y))}, 200)`;
+
+        // Apply the gradient to the body background
+        document.body.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+      });
+    </script>
   </body>
 </html>
