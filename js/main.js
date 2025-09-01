@@ -2,27 +2,40 @@
 
 // Theme Toggle Functionality
 const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.querySelector('.theme-icon');
 const body = document.body;
+const logo = document.querySelector('.logo');
+
+// Function to update logo based on theme
+function updateLogo() {
+  if (body.classList.contains('light-mode')) {
+    logo.src = 'images/Logo black.png';
+  } else {
+    logo.src = 'images/Logo white 2.png';
+  }
+}
 
 // Check for saved theme preference or default to dark mode
 const currentTheme = localStorage.getItem('theme') || 'dark';
 if (currentTheme === 'light') {
   body.classList.add('light-mode');
-  themeIcon.textContent = '☀️';
+  if (themeToggle) themeToggle.checked = true;
 }
+
+// Update logo on page load
+if (logo) updateLogo();
 
 // Theme toggle event listener
 if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
+  themeToggle.addEventListener('change', () => {
     body.classList.toggle('light-mode');
     
-    // Update icon and save preference
+    // Update logo
+    if (logo) updateLogo();
+    
+    // Save preference
     if (body.classList.contains('light-mode')) {
-      themeIcon.textContent = '☀️';
       localStorage.setItem('theme', 'light');
     } else {
-      themeIcon.textContent = '🌙';
       localStorage.setItem('theme', 'dark');
     }
   });
