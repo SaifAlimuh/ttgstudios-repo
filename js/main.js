@@ -54,6 +54,27 @@ document.addEventListener('mousemove', (event) => {
   document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+  });
+
+  // Close menu when clicking on a link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+  });
+}
+
 // Navigation active state
 document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
