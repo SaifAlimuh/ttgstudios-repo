@@ -1,5 +1,33 @@
 // TTG Studios Main JavaScript
 
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+const body = document.body;
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+  body.classList.add('light-mode');
+  themeIcon.textContent = '☀️';
+}
+
+// Theme toggle event listener
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    
+    // Update icon and save preference
+    if (body.classList.contains('light-mode')) {
+      themeIcon.textContent = '☀️';
+      localStorage.setItem('theme', 'light');
+    } else {
+      themeIcon.textContent = '🌙';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
+
 // Subtle mouse interaction for professional feel
 document.addEventListener('mousemove', (event) => {
   const x = event.clientX / window.innerWidth;
