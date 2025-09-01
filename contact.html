@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TTG Studios</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="content-section">
+                <h2>Get In Touch</h2>
+                <p>Ready to bring your vision to life? We'd love to hear about your project and discuss how TTG Studios can help create something amazing together.</p>
+            </section>
+
+            <section class="content-section">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: none; border-radius: 4px; background: rgba(255, 255, 255, 0.2); color: #fff; font-family: inherit;">
+                                <option value="">Select a service</option>
+                                <option value="wedding-photography">Wedding Photography</option>
+                                <option value="wedding-videography">Wedding Videography</option>
+                                <option value="portrait-photography">Portrait Photography</option>
+                                <option value="event-photography">Event Photography</option>
+                                <option value="commercial-photography">Commercial Photography</option>
+                                <option value="corporate-video">Corporate Video</option>
+                                <option value="music-video">Music Video</option>
+                                <option value="social-media-content">Social Media Content</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project, event date, location, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h3>Other Ways to Reach Us</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Social Media</h3>
+                        <p>Follow us on <a href="https://www.instagram.com/ttgstudios.ca" target="_blank">Instagram</a> for our latest work and updates.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Response Time</h3>
+                        <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Consultation</h3>
+                        <p>Free initial consultation to discuss your project needs and creative vision.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TTG Studios. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
