@@ -1,14 +1,16 @@
 // TTG Studios Main JavaScript
 
-// Interactive background gradient
+// Subtle mouse interaction for professional feel
 document.addEventListener('mousemove', (event) => {
   const x = event.clientX / window.innerWidth;
   const y = event.clientY / window.innerHeight;
 
-  const color1 = `rgb(${Math.floor(255 * x)}, ${Math.floor(255 * y)}, 200)`;
-  const color2 = `rgb(${Math.floor(255 * (1 - x))}, ${Math.floor(255 * (1 - y))}, 200)`;
+  // Subtle gradient shift
+  const intensity = 0.1;
+  const moveX = (x - 0.5) * intensity;
+  const moveY = (y - 0.5) * intensity;
 
-  document.body.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+  document.body.style.transform = `translate(${moveX}px, ${moveY}px)`;
 });
 
 // Navigation active state
