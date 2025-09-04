@@ -87,9 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Basic form validation only
+// Basic form validation and success handling
 const contactForm = document.querySelector('form[action*="formspree"]');
 if (contactForm) {
+  // Check if form was successfully submitted
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    alert('Thank you for your message! We\'ll get back to you soon.');
+    contactForm.reset();
+    // Remove success parameter from URL
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+  
   contactForm.addEventListener('submit', (e) => {
     const name = contactForm.querySelector('[name="name"]').value;
     const email = contactForm.querySelector('[name="email"]').value;

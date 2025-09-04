@@ -50,6 +50,11 @@
             <section class="content-section">
                 <div class="contact-form">
                     <form action="https://formspree.io/f/mldwolpn" method="POST">
+                        
+                        <input type="hidden" name="_subject" value="New TTG Studios Contact Form Submission">
+                        <!-- Redirect back to contact page after submission -->
+                        <input type="hidden" name="_next" value="https://www.ttgstudios.uk/contact.html?success=true">
+                        
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Your full name">
