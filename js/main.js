@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Contact form handling
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     // Get form data
@@ -101,13 +101,38 @@ if (contactForm) {
     
     // Simple validation
     if (!name || !email || !message) {
-      alert('Please fill in all fields');
+      alert('Please fill in all required fields');
       return;
     }
     
-    // For now, just show success message
-    // In production, you'd send this to a server
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    contactForm.reset();
+    // Show loading state
+    const submitBtn = contactForm.querySelector('.btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    try {
+      // Submit to Formspree
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        contactForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
+      // Reset button
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   });
 }
