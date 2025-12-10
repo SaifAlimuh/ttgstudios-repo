@@ -1,52 +1,229 @@
-<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0
-, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Link - TTG Studios</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
+            color: white;
             text-align: center;
-            margin-top: 20%;
+            margin-top: auto;
+            background-color: black;
+            min-height: 100vh;
         }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
+
+        .card {
+            
+                min-height: 90vh;            /* fill viewport */
+                display: flex;
+                flex-direction: column;       /* stack children vertically */
+                align-items: center;          /* center horizontally */
+                justify-content: flex-start;  /* align to top */
+                padding-top: 50px;            /* optional small top gap */
+                max-height: 100px;
+                max-width: 400px;
+                margin: 20px auto;
+               
+                /*background: rgba(231, 227, 227, 0.386);*/
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                backdrop-filter: blur(50px);
+
+                /* white gradient background */
+                background: linear-gradient(180deg,
+                    rgba(255,255,255,1) 0%,
+                    rgba(250,250,250,0.98) 30%,
+                    rgba(245,245,245,0.95) 60%,
+                    rgba(240,240,240,0.9) 100%);
+
+                /* subtle border & soft inner glow */
+                border: 1px solid rgba(34,34,34,0.06);
+                box-shadow:
+                    0 6px 18px rgba(20,20,20,0.12),
+                    inset 0 1px 0 rgba(255,255,255,0.6);
+
+                /*optional glass effect on supported browsers */
+                -webkit-backdrop-filter: blur(6px) saturate(120%);
+                backdrop-filter: blur(6px) saturate(120%);
+
+                color: #111;
+                
         }
-        a:hover {
-            text-decoration: underline;
+
+
+        .logoTop .logo {
+            height: auto;
+            width: 100px;
+            display: relative;
+            /*justify-content: center; 
+            align-items: center;*/
+            padding-top: 20px;
+
         }
-        div {
-            display: inline-block;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(206, 206, 206, 0.499);
+            margin: 0 auto;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
+            display: relative;
+            backdrop-filter: blur(50px);
+           /* justify-content: center; 
+            align-items: center; */
+        }
+
+        .mainlogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .desc {
+            
+            font-size: 14px;
+            font-weight: bold;
+            padding-top: auto;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+        }
+
+        .butnlink {
+            font-size: 16px;
+            margin: 0, auto;
+            height: 50px;
+            width: 300px;
+            background-color: cadetblue;
+            display: inline-block;
+            border-radius: 50px;
             
         }
-    </style>
-    <body>
-        <div>
-            <p><a href="https://linktr.ee/ttgstudios">Redirecting...</a></p>
-        </div>
-        
-        <script>
-            // JavaScript code can be added here if needed
-            //document.getElementsByTagName("body")[0].innerHTML = "<a href='https://linktr.ee/ttgstudios'>Click here if you are not redirected.</a>";
-            //setTimeout(() => {window.location.href = "https://linktr.ee/ttgstudios";}, 3000);
-            window.location.href = "https://linktr.ee/ttgstudios";
-        </script>
 
-        <noscript>
-            document.getElementsByTagName("body")[0].innerHTML = "<a href='https://linktr.ee/ttgstudios'>Click here if you are not redirected.</a>";
-        </moscript>
+        .btn {
+            background: linear-gradient(135deg, #6a6b6cd6, #bababc);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            padding: 1rem 2.5rem;
+            height: 50px;
+            width: 300px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(120, 119, 198, 0.3);
+            margin-bottom: 10px;
+            }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #5a5b5cd6, #9b9c9d);
+            box-shadow: 0 8px 20px rgba(120, 119, 198, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 15px rgba(120, 119, 198, 0.3);
+        }
+
+        .socials .icon {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            width: auto;
+            margin: 0 10px;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+            
+    </style>
+   
+    <body>
+        <div class="card">
+            <div class="mainlogo">
+                <div class="circle">
+                    <div class="LogoTop">
+                    <img class="logo" src="./images/Logo black.png" alt="TTG Studios Logo">
+                    </div>
+                </div>
+            </div>
+
+            <div style="font-size: 20px; font-weight: bold; padding-top: auto; padding-bottom: 0px; display: inline-flex; margin: 0px">
+                <p>ttgstudios</p>
+            </div>
+
+            <div class="socials">
+
+                <a href="https://www.instagram.com/ttgstudios.uk" target="_blank" rel="noopener noreferrer">
+                    <img class="icon" src="./images/instaicon.png" alt="Instagram Icon">
+                </a>
+
+                <a href="https://www.facebook.com/ttgstudio.ca/" target="_blank" rel="noopener noreferrer">
+                    <img class="icon" src="./images/fbicon.png" alt="Facebook Icon">
+                </a>
+
+                <a href="https://www.ttgstudios.uk" target="_blank" rel="noopener noreferrer">
+                    <img class="icon" src="./images/whatsappicon.png" alt="Whatsapp Icon">
+                </a>
+            </div> 
+
+            <div class="desc">
+                <p>Media Agency | Automotive 🏎️ | Real Estate 🏠 | Events 🎉 | Commercial 📈</p>
+            </div>
+
+            <div>
+                <button class="btn" onclick="redirweb()" id="websitelink">ttgstudios website</button>
+            </div>
+
+            <div>
+                <button class="btn" onclick="redirinsta()" id="instalinkuk">ttgstudios.uk instagram</button>
+            </div>
+
+            <div>
+                <button class="btn" onclick="redirinstaca()" id="instalinkca">ttgstudios.ca instagram</button>
+            </div>
+
+            <div>
+                <button class="btn" onclick="redirfb()">Facebook ttgstudios.ca</button>
+            </div>
+        </div>
+
     </body>
+
+    <script>
+        function redirweb() {
+          
+            window.open('https://www.ttgstudios.uk', '_blank', 'noopener,noreferrer');
+        }
+
+        function redirinsta() {
+            window.open('https://www.instagram.com/ttgstudios.uk', '_blank', 'noopener,noreferrer');
+        }
+
+        function redirinstaca() {
+            window.open('https://www.instagram.com/ttgstudios.ca', '_blank', 'noopener,noreferrer');
+        }
+
+        function redirfb() {
+            window.open('https://www.facebook.com/ttgstudio.ca/', '_blank', 'noopener,noreferrer');
+        }
+    </script>
 </head>
